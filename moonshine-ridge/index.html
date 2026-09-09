@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moonshine Ridge | Guest Guide</title>
+  <meta name="description" content="Your Moonshine Ridge guest guide — everything you need for a comfortable stay.">
+  <meta name="theme-color" content="#2f4f4f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:#233130;
+      --muted:#65706d;
+      --paper:#f7f5ef;
+      --card:#ffffff;
+      --line:#ddd8cc;
+      --accent:#2f4f4f;
+      --accent-dark:#1f3838;
+      --gold:#a88b58;
+      --mist:#e8edeb;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      font-family:"Source Sans 3", Arial, sans-serif;
+      color:var(--ink);
+      background:var(--paper);
+      line-height:1.65;
+    }
+    .hero {
+      min-height:72vh;
+      display:flex;
+      align-items:flex-end;
+      padding:48px 7vw;
+      background:
+        linear-gradient(180deg, rgba(17,35,34,.22), rgba(17,35,34,.82)),
+        url("https://a0.muscache.com/im/pictures/hosting/Hosting-1178559002757074225/original/1f59c1e5-d1b1-4212-81b1-f2717d80189f.jpeg?im_w=1600") center/cover,
+        #2f4f4f;
+      color:white;
+    }
+    .hero-inner { max-width:900px; }
+    .brand {
+      display:inline-flex;
+      align-items:center;
+      gap:14px;
+      color:white;
+      text-decoration:none;
+      margin-bottom:clamp(58px,10vh,110px);
+    }
+    .brand-mark {
+      width:62px;
+      height:62px;
+      border:1px solid rgba(255,255,255,.62);
+      display:grid;
+      place-items:center;
+      font:500 20px/1 "Cinzel", Georgia, serif;
+      letter-spacing:.06em;
+    }
+    .brand-name {
+      font:500 18px/1.15 "Cinzel", Georgia, serif;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .brand-name span {
+      display:block;
+      margin-top:6px;
+      font:600 11px/1 "Source Sans 3", Arial, sans-serif;
+      letter-spacing:.18em;
+      opacity:.82;
+    }
+    .eyebrow {
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font:700 12px "Source Sans 3", Arial, sans-serif;
+      margin-bottom:14px;
+      opacity:.9;
+    }
+    h1 {
+      font-size:clamp(44px,8vw,88px);
+      line-height:.95;
+      margin:0 0 18px;
+      font-family:"Cinzel", Georgia, serif;
+      font-weight:400;
+      letter-spacing:.01em;
+    }
+    .hero p { font-size:clamp(18px,2.5vw,25px); margin:0; max-width:700px; }
+    nav {
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(247,245,239,.96);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+      overflow-x:auto;
+      white-space:nowrap;
+    }
+    nav a {
+      display:inline-block;
+      padding:16px 15px;
+      color:var(--ink);
+      text-decoration:none;
+      font:700 12px "Source Sans 3", Arial, sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    nav a:hover { color:var(--accent); }
+    main { max-width:1100px; margin:auto; padding:24px 6vw 80px; }
+    section { padding:58px 0 20px; border-bottom:1px solid var(--line); }
+    section:last-child { border-bottom:0; }
+    h2 { font:400 38px/1.2 "Cinzel", Georgia, serif; color:var(--accent); margin:0 0 12px; }
+    h3 { font:500 22px/1.3 "Cinzel", Georgia, serif; color:var(--accent); margin:26px 0 8px; }
+    .intro { color:var(--muted); max-width:760px; font-size:18px; }
+    a { color:var(--accent); }
+    .facts {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 22px;
+      padding:18px 0 2px;
+      color:var(--muted);
+      font-weight:600;
+    }
+    .facts span::before { content:"•"; color:var(--gold); margin-right:10px; }
+    .gallery {
+      display:grid;
+      grid-template-columns:1.25fr .75fr .75fr;
+      grid-template-rows:220px 220px;
+      gap:10px;
+      margin:30px 0 6px;
+    }
+    .gallery figure { margin:0; overflow:hidden; position:relative; background:var(--mist); }
+    .gallery figure:first-child { grid-row:1 / 3; }
+    .gallery img { width:100%; height:100%; display:block; object-fit:cover; transition:transform .5s ease; }
+    .gallery figure:hover img { transform:scale(1.025); }
+    .gallery figcaption {
+      position:absolute;
+      left:0; right:0; bottom:0;
+      padding:28px 12px 10px;
+      color:white;
+      font-size:14px;
+      background:linear-gradient(transparent,rgba(0,0,0,.72));
+    }
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+      margin-top:25px;
+    }
+    .card {
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:4px;
+      padding:22px;
+      box-shadow:0 8px 28px rgba(35,49,48,.05);
+    }
+    .card p { margin:0 0 12px; }
+    .card p:last-child { margin-bottom:0; }
+    .card a { font-weight:700; text-underline-offset:3px; }
+    .event-date { color:var(--gold); font-weight:700; margin-bottom:7px; }
+    .card strong { display:block; font:700 13px "Source Sans 3",Arial,sans-serif; color:var(--accent); text-transform:uppercase; letter-spacing:.1em; margin-bottom:7px; }
+    .callout {
+      background:var(--mist);
+      border-left:4px solid var(--accent);
+      padding:20px 22px;
+      border-radius:3px;
+      margin:22px 0;
+    }
+    .button {
+      display:inline-block;
+      background:var(--accent);
+      color:white;
+      padding:12px 18px;
+      border-radius:2px;
+      text-decoration:none;
+      font:700 13px "Source Sans 3",Arial,sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin:4px 4px 4px 0;
+    }
+    .button:hover { background:var(--accent-dark); }
+    ul { padding-left:22px; }
+    .placeholder {
+      color:#765e35;
+      background:#fffaf0;
+      border:1px dashed #b79a67;
+      padding:10px 12px;
+      border-radius:8px;
+    }
+    footer {
+      margin:0;
+      padding:42px max(6vw, calc((100vw - 1100px)/2));
+      color:rgba(255,255,255,.78);
+      background:var(--accent-dark);
+      font-size:14px;
+    }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:28px; }
+    .footer-brand { font:500 18px "Cinzel", Georgia, serif; color:white; letter-spacing:.06em; }
+    .footer-link { color:white; text-decoration-color:var(--gold); text-underline-offset:4px; }
+    @media (max-width:600px) {
+      .hero { min-height:58vh; padding:35px 7vw; }
+      h2 { font-size:31px; }
+      nav a { padding:13px 10px; }
+      .brand { margin-bottom:48px; }
+      .brand-mark { width:54px; height:54px; font-size:18px; }
+      .brand-name { font-size:15px; }
+      .footer-inner { align-items:flex-start; flex-direction:column; }
+      .gallery { grid-template-columns:1fr 1fr; grid-template-rows:260px 180px 180px; }
+      .gallery figure:first-child { grid-column:1 / 3; grid-row:auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <a class="brand" href="https://822main.com" aria-label="Visit 822 Main Property Management">
+        <span class="brand-mark" aria-hidden="true">822</span>
+        <span class="brand-name">822 Main<span>Property Management</span></span>
+      </a>
+      <div class="eyebrow">Welcome to</div>
+      <h1>Moonshine Ridge</h1>
+      <p>Your private mountain retreat in the heart of Red River Gorge.</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#welcome">Welcome</a>
+    <a href="#arrival">Arrival</a>
+    <a href="#home">The Home</a>
+    <a href="#area">The Area</a>
+    <a href="#food">Food</a>
+    <a href="#events">Events</a>
+    <a href="#checkout">Checkout</a>
+  </nav>
+
+  <main>
+    <section id="welcome">
+      <h2>Welcome</h2>
+      <p class="intro">
+        Welcome to Moonshine Ridge, a peaceful cabin tucked into the wooded ridges
+        outside Stanton. Use this guide to settle in, enjoy the cabin, and plan
+        memorable days around Red River Gorge.
+      </p>
+      <div class="facts" aria-label="Property highlights">
+        <span>Up to 8 guests</span><span>3 bedrooms</span><span>4 beds</span><span>2 baths</span><span>Private hot tub</span>
+      </div>
+      <div class="gallery" aria-label="Moonshine Ridge photo gallery">
+        <figure><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1178559002757074225/original/aa357e35-fcca-45e6-9456-9f67a9bc6415.jpeg?im_w=1200" alt="Moonshine Ridge cabin surrounded by trees" loading="eager"><figcaption>A private cabin in the wooded ridges</figcaption></figure>
+        <figure><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1178559002757074225/original/71139d47-2e90-4ad9-8ccb-1ca8d2602533.jpeg?im_w=720" alt="Hot tub overlooking the mountain scenery" loading="lazy"><figcaption>Hot tub with a mountain view</figcaption></figure>
+        <figure><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1178559002757074225/original/0dbf7ac4-098d-420d-b5e5-83662dfd7321.jpeg?im_w=720" alt="Guests relaxing around the outdoor fire pit" loading="lazy"><figcaption>Evenings around the fire pit</figcaption></figure>
+        <figure><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1178559002757074225/original/121bf57d-6a71-486a-aed9-2464576218f4.jpeg?im_w=720" alt="Open loft bedroom with exposed wood beams" loading="lazy"><figcaption>Rustic, roomy sleeping spaces</figcaption></figure>
+        <figure><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1178559002757074225/original/7a899b8e-cf8c-4bb9-aece-9e9c6933f813.jpeg?im_w=720" alt="Comfortable lower-level living room" loading="lazy"><figcaption>Space to relax together</figcaption></figure>
+      </div>
+      <div class="callout">
+        <strong>A quick note</strong><br>
+        Make yourself at home and message us through Airbnb if you need anything
+        during your stay. We are happy to help.
+      </div>
+      <a class="button" href="https://www.airbnb.com/rooms/1178559002757074225" target="_blank" rel="noopener">View the Airbnb listing</a>
+      <div class="grid">
+        <div class="card"><strong>Wi-Fi</strong><b>Network:</b> Moonshinecabin<br><b>Password:</b> 12345678</div>
+        <div class="card"><strong>Check-in</strong><b>4:00 PM–8:00 PM</b><br>Entry instructions will be sent on the day of check-in.</div>
+        <div class="card"><strong>Check-out</strong><b>11:00 AM</b></div>
+        <div class="card"><strong>Need help?</strong>Message your host through Airbnb for the quickest assistance.</div>
+      </div>
+    </section>
+
+    <section id="arrival">
+      <h2>Arrival & Check-In</h2>
+      <p class="intro">Everything you need to get settled when you arrive.</p>
+      <h3>Getting here</h3>
+      <p>Moonshine Ridge is in the private Cabins at Birch Hollow community near Stanton. Your exact address is supplied with your confirmed reservation. Mountain roads can be narrow and winding, so arrive before dark when possible and follow the host's arrival directions rather than relying only on GPS.</p>
+      <h3>Parking</h3>
+      <p>Free driveway parking is available on the property. Please keep access areas clear and use extra care when turning around on the mountain drive.</p>
+    </section>
+
+    <section id="home">
+      <h2>The Home</h2>
+      <p class="intro">A quick reference for the amenities and important house information.</p>
+      <div class="grid">
+        <div class="card"><strong>Kitchen & Gathering</strong>Prepare meals in the full kitchen, then gather in the open-concept kitchen and living area. It is designed for families and friends to reconnect after a day outside.</div>
+        <div class="card"><strong>Sleeping Arrangements</strong>Queen bedroom on the main level; king bed in the open loft with a private balcony; a cozy lower-level bedroom; and a full-size sofa bed in the basement living area.</div>
+        <div class="card"><strong>Deck, Hot Tub & Fire Pit</strong>The covered deck and private hot tub overlook the wooded mountain scenery. A fire pit offers another favorite place to unwind beneath the stars.</div>
+        <div class="card"><strong>Wi-Fi & Entertainment</strong><p><b>Network:</b> Moonshinecabin<br><b>Password:</b> 12345678</p><div class="placeholder">ADD TV AND STREAMING INSTRUCTIONS</div></div>
+      </div>
+      <h3>House Rules</h3>
+      <ul>
+        <li>Please respect the home and surrounding property.</li>
+        <li>Keep noise at a considerate level, especially during quiet hours.</li>
+        <li>Follow the posted instructions for the hot tub, fire pit, and other amenities.</li>
+        <li>Report damage or maintenance issues as soon as possible.</li>
+      </ul>
+    </section>
+
+    <section id="area">
+      <h2>Explore the Area</h2>
+      <p class="intro">
+        Red River Gorge is celebrated for sandstone cliffs, natural arches,
+        hiking, climbing, paddling, and scenic drives through Daniel Boone National Forest.
+      </p>
+      <div class="grid">
+        <div class="card"><strong>Natural Bridge State Resort Park</strong><p>Walk beneath or hike to the top of Kentucky's iconic sandstone arch. The park also offers trails, overlooks, and a seasonal skylift.</p><a href="https://parks.ky.gov/explore/natural-bridge-state-resort-park-7796" target="_blank" rel="noopener">Plan your visit</a></div>
+        <div class="card"><strong>Red River Gorge Geological Area</strong><p>Explore natural arches, dramatic cliffs, forest trails, and the scenic loop through Nada Tunnel in Daniel Boone National Forest.</p><a href="https://www.fs.usda.gov/r08/danielboone/recreation/red-river-gorge-geological-area" target="_blank" rel="noopener">Forest Service information</a></div>
+        <div class="card"><strong>The Gorge Underground</strong><p>Take a guided kayak or boat tour through a flooded limestone mine—an unusual adventure that works well in any weather.</p><a href="https://www.gorgeunderground.com" target="_blank" rel="noopener">View tours</a></div>
+        <div class="card"><strong>More Local Adventures</strong><p>Try ziplining, guided climbing, Hollerwood off-road trails, the Kentucky Reptile Zoo, Gladie Visitor Center, or a paddle on the Red River.</p><a href="https://redrivergorge.com/listing/adventures-outdoors/" target="_blank" rel="noopener">Explore activities</a></div>
+      </div>
+    </section>
+
+    <section id="food">
+      <h2>Eat & Drink</h2>
+      <p class="intro">Local favorites for coffee, breakfast, a post-hike meal, and a relaxed dinner in the Gorge.</p>
+      <div class="grid">
+        <div class="card"><strong>Daniel Boone Coffee Shop</strong><p>A rustic Slade café for coffee, pastries, and home-cooked breakfast or lunch before hitting the trails.</p><a href="https://www.danielboonecoffeeshop.com" target="_blank" rel="noopener">Visit website</a></div>
+        <div class="card"><strong>Miguel's Pizza</strong><p>A colorful, family-owned Red River Gorge institution and longtime climbers' gathering place, serving custom pizzas since 1986.</p><a href="https://www.miguelspizza.com" target="_blank" rel="noopener">Visit website</a></div>
+        <div class="card"><strong>Red River Rockhouse</strong><p>A lively local tavern known for satisfying burgers, tacos, and a cold drink after a day of hiking or climbing.</p><a href="https://www.redriverrockhouse.com" target="_blank" rel="noopener">Visit website</a></div>
+        <div class="card"><strong>RedPoint BBQ</strong><p>Modern Kentucky barbecue made with local ingredients, plus a scenic back patio that is especially inviting around sunset.</p><a href="https://www.redpointbbq.com" target="_blank" rel="noopener">Visit website</a></div>
+        <div class="card"><strong>La Cabaña</strong><p>Scratch-made Mexican favorites, margaritas, and a casual atmosphere in the heart of the Gorge.</p><a href="https://www.lacabanaofslade.com" target="_blank" rel="noopener">Visit website</a></div>
+        <div class="card"><strong>Cliffview Pies & Pints</strong><p>Comfort food from breakfast platters to specialty pizzas, hoagies, and cold drinks near the Gorge.</p><a href="https://cliffviewcafe.com" target="_blank" rel="noopener">Visit website</a></div>
+      </div>
+      <div class="callout"><strong>Local tip</strong><br>Hours can be seasonal in the Gorge. Check the restaurant's website or call before making the drive, especially early in the week.</div>
+    </section>
+
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <p class="intro">
+        A few notable happenings near the Gorge this fall. Dates and details can change, so check the event page before heading out.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <strong>Living Archaeology Weekend</strong>
+          <div class="event-date">September 19, 2026 • Public Day</div>
+          <p>Free demonstrations of Native and pioneer technologies at Hoedown Island in Natural Bridge State Resort Park, from 9 a.m.–4 p.m.</p>
+          <a href="https://www.livingarchaeologyweekend.org" target="_blank" rel="noopener">Event details</a>
+        </div>
+        <div class="card">
+          <strong>Rocktoberfest 2026</strong>
+          <div class="event-date">October 7–11, 2026</div>
+          <p>The Red River Gorge Climbers' Coalition's annual gathering in Campton, with clinics, competitions, live music, food trucks, gear vendors, and stewardship events.</p>
+          <a href="https://rrgcc.networkforgood.com/events/104904-rocktoberfest-2026" target="_blank" rel="noopener">Tickets and schedule</a>
+        </div>
+        <div class="card">
+          <strong>What's Happening in Stanton</strong>
+          <div class="event-date">Updated throughout the season</div>
+          <p>Check Stanton Tourism's calendar for live music, community gatherings, outdoor programs, and other events happening during your stay.</p>
+          <a href="https://explorestanton.com/events/" target="_blank" rel="noopener">Browse the local calendar</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="checkout">
+      <h2>Before You Go</h2>
+      <p class="intro">A simple checkout checklist helps us prepare the home for the next guest.</p>
+      <ul>
+        <li>Check that you have all personal belongings.</li>
+        <li>Dispose of food and trash according to the house instructions.</li>
+        <li>Turn off lights and appliances that don't need to remain on.</li>
+        <li>Lock doors and windows when leaving.</li>
+      </ul>
+      <div class="callout">
+        Thank you for choosing Moonshine Ridge and 822 Main Property Management. We hope the cabin gave you the perfect place to relax after your Red River Gorge adventures.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">822 Main Property Management</div>
+        <div>Moonshine Ridge Guest Guide • Last updated: September 2026</div>
+      </div>
+      <a class="footer-link" href="https://822main.com">Visit 822main.com</a>
+    </div>
+  </footer>
+</body>
+</html>
