@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1002 CC | Guest Guide</title>
+  <meta name="description" content="Your 1002 CC guest guide — arrival information, condo details, and curated Shelbyville recommendations.">
+  <meta name="theme-color" content="#2f4f4f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:#233130;
+      --muted:#65706d;
+      --paper:#f7f5ef;
+      --card:#ffffff;
+      --line:#ddd8cc;
+      --accent:#2f4f4f;
+      --accent-dark:#1f3838;
+      --gold:#a88b58;
+      --mist:#e8edeb;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      font-family:"Source Sans 3", Arial, sans-serif;
+      color:var(--ink);
+      background:var(--paper);
+      line-height:1.65;
+    }
+    .hero {
+      min-height:72vh;
+      display:flex;
+      align-items:flex-end;
+      padding:48px 7vw;
+      background:
+        linear-gradient(180deg, rgba(17,35,34,.22), rgba(17,35,34,.82)),
+        url("https://a0.muscache.com/im/pictures/hosting/Hosting-33546959/original/691af0eb-cd4b-4600-ba89-503ff96f009f.jpeg?im_w=1600") center/cover,
+        #2f4f4f;
+      color:white;
+    }
+    .hero-inner { max-width:900px; }
+    .brand {
+      display:inline-flex;
+      align-items:center;
+      gap:14px;
+      color:white;
+      text-decoration:none;
+      margin-bottom:clamp(58px,10vh,110px);
+    }
+    .brand-mark {
+      width:62px;
+      height:62px;
+      border:1px solid rgba(255,255,255,.62);
+      display:grid;
+      place-items:center;
+      font:500 20px/1 "Cinzel", Georgia, serif;
+      letter-spacing:.06em;
+    }
+    .brand-name {
+      font:500 18px/1.15 "Cinzel", Georgia, serif;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .brand-name span {
+      display:block;
+      margin-top:6px;
+      font:600 11px/1 "Source Sans 3", Arial, sans-serif;
+      letter-spacing:.18em;
+      opacity:.82;
+    }
+    .eyebrow {
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font:700 12px "Source Sans 3", Arial, sans-serif;
+      margin-bottom:14px;
+      opacity:.9;
+    }
+    h1 {
+      font-size:clamp(44px,8vw,88px);
+      line-height:.95;
+      margin:0 0 18px;
+      font-family:"Cinzel", Georgia, serif;
+      font-weight:400;
+      letter-spacing:.01em;
+    }
+    .hero p { font-size:clamp(18px,2.5vw,25px); margin:0; max-width:700px; }
+    nav {
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(247,245,239,.96);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+      overflow-x:auto;
+      white-space:nowrap;
+    }
+    nav a {
+      display:inline-block;
+      padding:16px 15px;
+      color:var(--ink);
+      text-decoration:none;
+      font:700 12px "Source Sans 3", Arial, sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    nav a:hover { color:var(--accent); }
+    main { max-width:1100px; margin:auto; padding:24px 6vw 80px; }
+    section { padding:58px 0 20px; border-bottom:1px solid var(--line); }
+    section:last-child { border-bottom:0; }
+    h2 { font:400 38px/1.2 "Cinzel", Georgia, serif; color:var(--accent); margin:0 0 12px; }
+    h3 { font:500 22px/1.3 "Cinzel", Georgia, serif; color:var(--accent); margin:26px 0 8px; }
+    .intro { color:var(--muted); max-width:760px; font-size:18px; }
+    a { color:var(--accent); }
+    .facts {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 22px;
+      padding:18px 0 2px;
+      color:var(--muted);
+      font-weight:600;
+    }
+    .facts span::before { content:"•"; color:var(--gold); margin-right:10px; }
+    .gallery {
+      display:grid;
+      grid-template-columns:1.25fr .75fr .75fr;
+      grid-template-rows:220px 220px;
+      gap:10px;
+      margin:30px 0 6px;
+    }
+    .gallery figure { margin:0; overflow:hidden; position:relative; background:var(--mist); }
+    .gallery figure:first-child { grid-row:1 / 3; }
+    .gallery img { width:100%; height:100%; display:block; object-fit:cover; transition:transform .5s ease; }
+    .gallery figure:hover img { transform:scale(1.025); }
+    .gallery figcaption {
+      position:absolute;
+      left:0; right:0; bottom:0;
+      padding:28px 12px 10px;
+      color:white;
+      font-size:14px;
+      background:linear-gradient(transparent,rgba(0,0,0,.72));
+    }
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+      margin-top:25px;
+    }
+    .card {
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:4px;
+      padding:22px;
+      box-shadow:0 8px 28px rgba(35,49,48,.05);
+    }
+    .card p { margin:0 0 12px; }
+    .card p:last-child { margin-bottom:0; }
+    .card a { font-weight:700; text-underline-offset:3px; }
+    .event-date { color:var(--gold); font-weight:700; margin-bottom:7px; }
+    .card strong { display:block; font:700 13px "Source Sans 3",Arial,sans-serif; color:var(--accent); text-transform:uppercase; letter-spacing:.1em; margin-bottom:7px; }
+    .callout {
+      background:var(--mist);
+      border-left:4px solid var(--accent);
+      padding:20px 22px;
+      border-radius:3px;
+      margin:22px 0;
+    }
+    .button {
+      display:inline-block;
+      background:var(--accent);
+      color:white;
+      padding:12px 18px;
+      border-radius:2px;
+      text-decoration:none;
+      font:700 13px "Source Sans 3",Arial,sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin:4px 4px 4px 0;
+    }
+    .button:hover { background:var(--accent-dark); }
+    ul { padding-left:22px; }
+    .placeholder {
+      color:#765e35;
+      background:#fffaf0;
+      border:1px dashed #b79a67;
+      padding:10px 12px;
+      border-radius:8px;
+    }
+    footer {
+      margin:0;
+      padding:42px max(6vw, calc((100vw - 1100px)/2));
+      color:rgba(255,255,255,.78);
+      background:var(--accent-dark);
+      font-size:14px;
+    }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:28px; }
+    .footer-brand { font:500 18px "Cinzel", Georgia, serif; color:white; letter-spacing:.06em; }
+    .footer-link { color:white; text-decoration-color:var(--gold); text-underline-offset:4px; }
+    @media (max-width:600px) {
+      .hero { min-height:58vh; padding:35px 7vw; }
+      h2 { font-size:31px; }
+      nav a { padding:13px 10px; }
+      .brand { margin-bottom:48px; }
+      .brand-mark { width:54px; height:54px; font-size:18px; }
+      .brand-name { font-size:15px; }
+      .footer-inner { align-items:flex-start; flex-direction:column; }
+      .gallery { grid-template-columns:1fr 1fr; grid-template-rows:260px 180px 180px; }
+      .gallery figure:first-child { grid-column:1 / 3; grid-row:auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <a class="brand" href="https://822main.com" aria-label="Visit 822 Main Property Management">
+        <span class="brand-mark" aria-hidden="true">822</span>
+        <span class="brand-name">822 Main<span>Property Management</span></span>
+      </a>
+      <div class="eyebrow">Welcome to</div>
+      <h1>1002 CC</h1>
+      <p>A comfortable one-level Shelbyville condo near Bulleit Distilling Co., shopping, and Kentucky's Bourbon Trail.</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#welcome">Welcome</a>
+    <a href="#arrival">Arrival</a>
+    <a href="#home">The Home</a>
+    <a href="#area">The Area</a>
+    <a href="#food">Food</a>
+    <a href="#events">Events</a>
+    <a href="#checkout">Checkout</a>
+  </nav>
+
+  <main>
+    <section id="welcome">
+      <h2>Welcome</h2>
+      <p class="intro">
+        Welcome to 1002 CC, a comfortable two-bedroom condo in Shelbyville. Use
+        this guide to settle in and plan memorable days along the Bourbon Trail,
+        around Shelby County, and throughout Kentucky's Bluegrass region.
+      </p>
+      <div class="facts" aria-label="Property highlights">
+        <span>Up to 4 guests</span><span>2 bedrooms</span><span>2 beds</span><span>2 baths</span><span>One-level layout</span>
+      </div>
+      <div class="gallery" aria-label="1002 CC photo gallery">
+        <figure><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-33546959/original/691af0eb-cd4b-4600-ba89-503ff96f009f.jpeg?im_w=1200" alt="Brick exterior and private entrance at 1002 CC" loading="eager"><figcaption>Your Shelbyville condo</figcaption></figure>
+        <figure><img src="https://a0.muscache.com/im/pictures/a58a8081-4316-4887-a4b5-940b51dca2c3.jpg?im_w=720" alt="Open kitchen with breakfast counter" loading="lazy"><figcaption>Full kitchen and open layout</figcaption></figure>
+        <figure><img src="https://a0.muscache.com/im/pictures/4ddf0a0d-1b02-411d-92b4-cfc840700259.jpg?im_w=720" alt="Dining area in the condo" loading="lazy"><figcaption>A comfortable place to gather</figcaption></figure>
+        <figure><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MzM1NDY5NTk%3D/original/19dc64c9-f362-487a-a674-0f688b250fe8.jpeg?im_w=720" alt="Large primary bedroom with king bed" loading="lazy"><figcaption>King primary bedroom</figcaption></figure>
+        <figure><img src="https://a0.muscache.com/im/pictures/miso/Hosting-33546959/original/c4b67bc4-32ab-44a2-be9b-a89d29fa0ce8.jpeg?im_w=720" alt="Second bedroom with double bed" loading="lazy"><figcaption>Cozy second bedroom</figcaption></figure>
+      </div>
+      <div class="callout">
+        <strong>A quick note</strong><br>
+        Make yourself at home and message us through Airbnb if you need anything
+        during your stay. We are happy to help.
+      </div>
+      <a class="button" href="https://www.airbnb.com/rooms/33546959" target="_blank" rel="noopener">View the Airbnb listing</a>
+      <div class="grid">
+        <div class="card"><strong>Wi-Fi</strong><b>Network:</b> SpectrumSetup-85<br><b>Password:</b> sparetype050</div>
+        <div class="card"><strong>Check-in</strong><b>4:00 PM</b></div>
+        <div class="card"><strong>Check-out</strong><b>11:00 AM</b></div>
+        <div class="card"><strong>Need help?</strong>Message your host through Airbnb for the quickest assistance.</div>
+      </div>
+    </section>
+
+    <section id="arrival">
+      <h2>Arrival & Check-In</h2>
+      <p class="intro">Everything you need to get settled when you arrive.</p>
+      <h3>Getting here</h3>
+      <p>1002 CC is in a quiet Shelbyville location near I-64, shopping, groceries, and Kentucky Bourbon Trail stops. Your exact address and arrival details are supplied with your confirmed reservation.</p>
+      <h3>Parking</h3>
+      <p>Two free driveway parking spaces are available directly at the condo door. Keep neighboring entrances and travel lanes clear.</p>
+    </section>
+
+    <section id="home">
+      <h2>The Home</h2>
+      <p class="intro">A quick reference for the amenities and important house information.</p>
+      <div class="grid">
+        <div class="card"><strong>Kitchen & Gathering</strong>The open kitchen and living area includes full-size appliances and granite countertops, giving your group a comfortable place to cook and spend time together.</div>
+        <div class="card"><strong>Sleeping Arrangements</strong>The primary bedroom has a king bed, while the second bedroom has a double bed. Two full bathrooms make the condo convenient for up to four guests.</div>
+        <div class="card"><strong>Easy One-Level Layout</strong>There are no steps, parking is directly at the door, and hard-surface flooring runs throughout. One bathroom includes fixed toilet grab bars.</div>
+        <div class="card"><strong>Workspace & Patio</strong>Wi-Fi, a dedicated workspace, provided games, and a front patio with grilling space support both working trips and relaxed getaways.</div>
+      </div>
+      <h3>House Rules</h3>
+      <ul>
+        <li>Please respect the home and surrounding property.</li>
+        <li>Keep noise at a considerate level, especially during quiet hours.</li>
+        <li>Keep noise considerate in this multi-family community.</li>
+        <li>One pet is permitted per stay according to the listing; aggressive breeds are not allowed.</li>
+        <li>Keep shared access areas and neighboring parking spaces clear.</li>
+        <li>Report damage or maintenance issues as soon as possible.</li>
+      </ul>
+    </section>
+
+    <section id="area">
+      <h2>Explore the Area</h2>
+      <p class="intro">
+        Shelbyville sits in Kentucky's Bluegrass region, surrounded by bourbon, horse farms,
+        lakes, trails, orchards, history, and small-town charm.
+      </p>
+      <div class="grid">
+        <div class="card"><strong>Jeptha Creed Distillery</strong><p>Tour and taste at a family-owned, farm-to-glass distillery in Shelbyville. Reservations are recommended for guided experiences.</p><a href="https://jepthacreed.com/visit/" target="_blank" rel="noopener">Plan your visit</a></div>
+        <div class="card"><strong>Bulleit Distilling Co.</strong><p>Explore a modern Kentucky Bourbon Trail visitor experience with tours, tastings, and cocktail-focused programs.</p><a href="https://www.bulleit.com/visit-us" target="_blank" rel="noopener">View experiences</a></div>
+        <div class="card"><strong>Guist Creek Lake</strong><p>Spend time fishing, kayaking, picnicking, or simply enjoying the water and countryside at this Shelby County recreation spot.</p><a href="https://guistcreek.com/" target="_blank" rel="noopener">Lake information</a></div>
+        <div class="card"><strong>Shelby Trails Park</strong><p>Experience Kentucky horse country on wooded trails. Red Fern Riding Center offers rides and lessons for a range of experience levels.</p><a href="https://www.visitshelbyky.com/things-to-do/outdoors-recreation/horseback-riding/" target="_blank" rel="noopener">Explore horseback riding</a></div>
+        <div class="card"><strong>Gallrein Farms & Orchards</strong><p>Seasonal farm activities, produce, pumpkins, sunflowers, a petting zoo, and family-friendly events make this a favorite fall stop.</p><a href="https://gallreinfarms.com/" target="_blank" rel="noopener">See what's in season</a></div>
+        <div class="card"><strong>Frankfort Day Trip</strong><p>Visit Kentucky's capital for Buffalo Trace, the Kentucky History Center, riverside scenery, historic downtown, and seasonal events.</p><a href="https://visitfrankfort.com/" target="_blank" rel="noopener">Explore Frankfort</a></div>
+      </div>
+    </section>
+
+    <section id="food">
+      <h2>Eat & Drink</h2>
+      <p class="intro">Local favorites in Bagdad and nearby Shelbyville for coffee, country cooking, burgers, dinner, and craft drinks.</p>
+      <div class="grid">
+        <div class="card"><strong>B&amp;N Food Market</strong><p>A true Bagdad favorite known for the Newt Burger, brisket, Friday fish, and rotating daily specials. Arrive early because favorites can sell out.</p><a href="https://www.visitshelbyky.com/blog/stories/post/shelbykys-hidden-gems/" target="_blank" rel="noopener">Local guide</a></div>
+        <div class="card"><strong>The Farm Kitchen</strong><p>Family-owned country cooking made with fresh ingredients, daily specials, and well-loved homemade desserts on Frankfort Road.</p><a href="https://www.visitshelbyky.com/blog/stories/post/shelbykys-hidden-gems/" target="_blank" rel="noopener">Local guide</a></div>
+        <div class="card"><strong>Carriss's Grocery</strong><p>A country market and casual eatery serving rotating home-style meals such as meatloaf, pork tenderloin, and fried fish.</p><a href="https://www.visitshelbyky.com/blog/stories/post/shelbykys-hidden-gems/" target="_blank" rel="noopener">Local guide</a></div>
+        <div class="card"><strong>Claudia Sanders Dinner House</strong><p>A Shelbyville landmark for classic Kentucky hospitality and traditional Southern-style dining.</p><a href="https://claudiasandersshelbyville.com/" target="_blank" rel="noopener">Visit website</a></div>
+        <div class="card"><strong>Sixth and Main Coffeehouse</strong><p>A cozy downtown Shelbyville coffeehouse for locally roasted drinks, pastries, and an easy start before exploring.</p><a href="https://www.6amcoffee.com/" target="_blank" rel="noopener">Visit website</a></div>
+        <div class="card"><strong>Last Stop Brewing Co.</strong><p>A relaxed local brewery offering small-batch beer, tasting flights, burgers, and shareable pub favorites.</p><a href="https://www.laststopbrewingky.com/" target="_blank" rel="noopener">Visit website</a></div>
+      </div>
+      <div class="callout"><strong>Local tip</strong><br>Country restaurants and markets may close early or sell out of daily specials. Check current hours before driving, especially on Sundays and Mondays.</div>
+    </section>
+
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <p class="intro">
+        A few notable fall happenings in Shelby County and nearby Frankfort. Dates and details can change, so check the event page before heading out.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <strong>Black Orchard Haunted House</strong>
+          <div class="event-date">Friday &amp; Saturday nights • September 18–October 31, 2026</div>
+          <p>A nationally recognized seasonal haunted attraction at Red Orchard Park in Shelbyville. Recommended for guests who enjoy intense scares.</p>
+          <a href="https://www.visitshelbyky.com/blog/stories/post/heres-what-to-see-and-do-in-shelbyky-this-fall/" target="_blank" rel="noopener">Fall event details</a>
+        </div>
+        <div class="card">
+          <strong>Fall Truck &amp; Tractor Pull</strong>
+          <div class="event-date">September 26–27, 2026</div>
+          <p>Championship truck and tractor pulling, food, and family-friendly excitement under the lights at the Shelby County Fairgrounds.</p>
+          <a href="https://www.visitshelbyky.com/blog/stories/post/heres-what-to-see-and-do-in-shelbyky-this-fall/" target="_blank" rel="noopener">Fall event details</a>
+        </div>
+        <div class="card">
+          <strong>Bourbon on the Banks</strong>
+          <div class="event-date">October 3, 2026 • 12–6 PM</div>
+          <p>A major bourbon event in nearby Frankfort, bringing Kentucky distilleries and visitors together along the Kentucky River.</p>
+          <a href="https://visitfrankfort.com/event/" target="_blank" rel="noopener">Frankfort event calendar</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="checkout">
+      <h2>Before You Go</h2>
+      <p class="intro">A simple checkout checklist helps us prepare the home for the next guest.</p>
+      <ul>
+        <li>Check that you have all personal belongings.</li>
+        <li>Dispose of food and trash according to the house instructions.</li>
+        <li>Turn off lights and appliances that don't need to remain on.</li>
+        <li>Lock doors and windows when leaving.</li>
+      </ul>
+      <div class="callout">
+        Thank you for choosing 1002 CC and 822 Main Property Management. We hope the condo gave you a comfortable home base for your Shelbyville and Bourbon Trail adventures.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">822 Main Property Management</div>
+        <div>1002 CC Guest Guide • Last updated: September 2026</div>
+      </div>
+      <a class="footer-link" href="https://822main.com">Visit 822main.com</a>
+    </div>
+  </footer>
+</body>
+</html>
