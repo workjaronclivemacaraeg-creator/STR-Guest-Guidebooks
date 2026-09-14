@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bourbon Trail Farmhouse | Guest Guide</title>
+  <meta name="description" content="Your Bourbon Trail Farmhouse guest guide — arrival details, home information, and curated Lawrenceburg recommendations.">
+  <meta name="theme-color" content="#2f4f4f">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink:#233130;
+      --muted:#65706d;
+      --paper:#f7f5ef;
+      --card:#ffffff;
+      --line:#ddd8cc;
+      --accent:#2f4f4f;
+      --accent-dark:#1f3838;
+      --gold:#a88b58;
+      --mist:#e8edeb;
+    }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body {
+      margin:0;
+      font-family:"Source Sans 3", Arial, sans-serif;
+      color:var(--ink);
+      background:var(--paper);
+      line-height:1.65;
+    }
+    .hero {
+      min-height:72vh;
+      display:flex;
+      align-items:flex-end;
+      padding:48px 7vw;
+      background:
+        linear-gradient(180deg, rgba(17,35,34,.22), rgba(17,35,34,.82)),
+        url("https://a0.muscache.com/im/pictures/hosting/Hosting-825264623560710105/original/8c15d3a5-dc4e-48a1-a2e5-0764ddeaf153.jpeg?im_w=1600") center/cover,
+        #2f4f4f;
+      color:white;
+    }
+    .hero-inner { max-width:900px; }
+    .brand {
+      display:inline-flex;
+      align-items:center;
+      gap:14px;
+      color:white;
+      text-decoration:none;
+      margin-bottom:clamp(58px,10vh,110px);
+    }
+    .brand-mark {
+      width:62px;
+      height:62px;
+      border:1px solid rgba(255,255,255,.62);
+      display:grid;
+      place-items:center;
+      font:500 20px/1 "Cinzel", Georgia, serif;
+      letter-spacing:.06em;
+    }
+    .brand-name {
+      font:500 18px/1.15 "Cinzel", Georgia, serif;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+    .brand-name span {
+      display:block;
+      margin-top:6px;
+      font:600 11px/1 "Source Sans 3", Arial, sans-serif;
+      letter-spacing:.18em;
+      opacity:.82;
+    }
+    .eyebrow {
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font:700 12px "Source Sans 3", Arial, sans-serif;
+      margin-bottom:14px;
+      opacity:.9;
+    }
+    h1 {
+      font-size:clamp(44px,8vw,88px);
+      line-height:.95;
+      margin:0 0 18px;
+      font-family:"Cinzel", Georgia, serif;
+      font-weight:400;
+      letter-spacing:.01em;
+    }
+    .hero p { font-size:clamp(18px,2.5vw,25px); margin:0; max-width:700px; }
+    nav {
+      position:sticky;
+      top:0;
+      z-index:10;
+      background:rgba(247,245,239,.96);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+      overflow-x:auto;
+      white-space:nowrap;
+    }
+    nav a {
+      display:inline-block;
+      padding:16px 15px;
+      color:var(--ink);
+      text-decoration:none;
+      font:700 12px "Source Sans 3", Arial, sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+    nav a:hover { color:var(--accent); }
+    main { max-width:1100px; margin:auto; padding:24px 6vw 80px; }
+    section { padding:58px 0 20px; border-bottom:1px solid var(--line); }
+    section:last-child { border-bottom:0; }
+    h2 { font:400 38px/1.2 "Cinzel", Georgia, serif; color:var(--accent); margin:0 0 12px; }
+    h3 { font:500 22px/1.3 "Cinzel", Georgia, serif; color:var(--accent); margin:26px 0 8px; }
+    .intro { color:var(--muted); max-width:760px; font-size:18px; }
+    a { color:var(--accent); }
+    .facts {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px 22px;
+      padding:18px 0 2px;
+      color:var(--muted);
+      font-weight:600;
+    }
+    .facts span::before { content:"•"; color:var(--gold); margin-right:10px; }
+    .gallery {
+      display:grid;
+      grid-template-columns:1.25fr .75fr .75fr;
+      grid-template-rows:220px 220px;
+      gap:10px;
+      margin:30px 0 6px;
+    }
+    .gallery figure { margin:0; overflow:hidden; position:relative; background:var(--mist); }
+    .gallery figure:first-child { grid-row:1 / 3; }
+    .gallery img { width:100%; height:100%; display:block; object-fit:cover; transition:transform .5s ease; }
+    .gallery figure:hover img { transform:scale(1.025); }
+    .gallery figcaption {
+      position:absolute;
+      left:0; right:0; bottom:0;
+      padding:28px 12px 10px;
+      color:white;
+      font-size:14px;
+      background:linear-gradient(transparent,rgba(0,0,0,.72));
+    }
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:16px;
+      margin-top:25px;
+    }
+    .card {
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:4px;
+      padding:22px;
+      box-shadow:0 8px 28px rgba(35,49,48,.05);
+    }
+    .card p { margin:0 0 12px; }
+    .card p:last-child { margin-bottom:0; }
+    .card a { font-weight:700; text-underline-offset:3px; }
+    .event-date { color:var(--gold); font-weight:700; margin-bottom:7px; }
+    .card strong { display:block; font:700 13px "Source Sans 3",Arial,sans-serif; color:var(--accent); text-transform:uppercase; letter-spacing:.1em; margin-bottom:7px; }
+    .callout {
+      background:var(--mist);
+      border-left:4px solid var(--accent);
+      padding:20px 22px;
+      border-radius:3px;
+      margin:22px 0;
+    }
+    .button {
+      display:inline-block;
+      background:var(--accent);
+      color:white;
+      padding:12px 18px;
+      border-radius:2px;
+      text-decoration:none;
+      font:700 13px "Source Sans 3",Arial,sans-serif;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      margin:4px 4px 4px 0;
+    }
+    .button:hover { background:var(--accent-dark); }
+    ul { padding-left:22px; }
+    .placeholder {
+      color:#765e35;
+      background:#fffaf0;
+      border:1px dashed #b79a67;
+      padding:10px 12px;
+      border-radius:8px;
+    }
+    footer {
+      margin:0;
+      padding:42px max(6vw, calc((100vw - 1100px)/2));
+      color:rgba(255,255,255,.78);
+      background:var(--accent-dark);
+      font-size:14px;
+    }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:28px; }
+    .footer-brand { font:500 18px "Cinzel", Georgia, serif; color:white; letter-spacing:.06em; }
+    .footer-link { color:white; text-decoration-color:var(--gold); text-underline-offset:4px; }
+    @media (max-width:600px) {
+      .hero { min-height:58vh; padding:35px 7vw; }
+      h2 { font-size:31px; }
+      nav a { padding:13px 10px; }
+      .brand { margin-bottom:48px; }
+      .brand-mark { width:54px; height:54px; font-size:18px; }
+      .brand-name { font-size:15px; }
+      .footer-inner { align-items:flex-start; flex-direction:column; }
+      .gallery { grid-template-columns:1fr 1fr; grid-template-rows:260px 180px 180px; }
+      .gallery figure:first-child { grid-column:1 / 3; grid-row:auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <a class="brand" href="https://822main.com" aria-label="Visit 822 Main Property Management">
+        <span class="brand-mark" aria-hidden="true">822</span>
+        <span class="brand-name">822 Main<span>Property Management</span></span>
+      </a>
+      <div class="eyebrow">Welcome to</div>
+      <h1>Bourbon Trail Farmhouse</h1>
+      <p>A restored farmhouse near Historic Main Street, distilleries, wineries, and Kentucky horse country.</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#welcome">Welcome</a>
+    <a href="#arrival">Arrival</a>
+    <a href="#home">The Home</a>
+    <a href="#area">The Area</a>
+    <a href="#food">Food</a>
+    <a href="#events">Events</a>
+    <a href="#checkout">Checkout</a>
+  </nav>
+
+  <main>
+    <section id="welcome">
+      <h2>Welcome</h2>
+      <p class="intro">
+        Welcome to Bourbon Trail Farmhouse, a restored bungalow-style home in
+        Lawrenceburg. Use this guide to settle in and plan memorable days along
+        the Bourbon Trail, on Historic Main Street, and throughout Kentucky's Bluegrass region.
+      </p>
+      <div class="facts" aria-label="Property highlights">
+        <span>Up to 8 guests</span><span>4 bedrooms</span><span>5 beds</span><span>2 baths</span><span>Private backyard &amp; fire pit</span>
+      </div>
+      <div class="gallery" aria-label="Bourbon Trail Farmhouse photo gallery">
+        <figure><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-825264623560710105/original/8c15d3a5-dc4e-48a1-a2e5-0764ddeaf153.jpeg?im_w=1200" alt="White Bourbon Trail Farmhouse with a red roof" loading="eager"><figcaption>Your Lawrenceburg farmhouse</figcaption></figure>
+        <figure><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-825264623560710105/original/65814eb6-383d-40b6-b756-001dd213e47e.jpeg?im_w=720" alt="Comfortable farmhouse living room" loading="lazy"><figcaption>A comfortable place to gather</figcaption></figure>
+        <figure><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-825264623560710105/original/7ead8bac-dc9e-489c-b5ee-95edb9bceb10.jpeg?im_w=720" alt="Fully equipped farmhouse kitchen" loading="lazy"><figcaption>A kitchen ready for shared meals</figcaption></figure>
+        <figure><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-825264623560710105/original/f8de9560-ab2a-49e9-87b8-e0b768cc59b8.jpeg?im_w=720" alt="Spacious bedroom with a queen bed and sofa bed" loading="lazy"><figcaption>Flexible sleeping space</figcaption></figure>
+        <figure><img src="https://a0.muscache.com/im/pictures/hosting/Hosting-825264623560710105/original/e46abf23-3379-4dfc-8315-eb4a4ee05920.jpeg?im_w=720" alt="Queen bedroom in the farmhouse" loading="lazy"><figcaption>Four welcoming bedrooms</figcaption></figure>
+      </div>
+      <div class="callout">
+        <strong>A quick note</strong><br>
+        Make yourself at home and message us through Airbnb if you need anything
+        during your stay. We are happy to help.
+      </div>
+      <a class="button" href="https://www.airbnb.com/rooms/825264623560710105" target="_blank" rel="noopener">View the Airbnb listing</a>
+      <div class="grid">
+        <div class="card"><strong>Wi-Fi</strong><b>Network:</b> SpectrumSetup-43<br><b>Password:</b> terrificpear158</div>
+        <div class="card"><strong>Check-in</strong><b>4:00 PM</b></div>
+        <div class="card"><strong>Check-out</strong><b>11:00 AM</b></div>
+        <div class="card"><strong>Need help?</strong>Message your host through Airbnb for the quickest assistance.</div>
+      </div>
+    </section>
+
+    <section id="arrival">
+      <h2>Arrival & Check-In</h2>
+      <p class="intro">Everything you need to get settled when you arrive.</p>
+      <h3>Getting here</h3>
+      <p>The farmhouse is in Lawrenceburg, about five to six blocks from Historic Main Street. Your exact address and arrival details are supplied with your confirmed reservation. Follow the host's directions and allow extra time if you have a scheduled distillery or winery tour.</p>
+      <h3>Parking</h3>
+      <p>Free parking is available in the private driveway. Please keep the sidewalk and neighboring access points clear.</p>
+    </section>
+
+    <section id="home">
+      <h2>The Home</h2>
+      <p class="intro">A quick reference for the amenities and important house information.</p>
+      <div class="grid">
+        <div class="card"><strong>Kitchen & Gathering</strong>Prepare meals in the fully equipped kitchen, then relax together in the comfortable living room. The restored farmhouse gives groups room to reconnect after a day exploring.</div>
+        <div class="card"><strong>Sleeping Arrangements</strong>The home has four bedrooms. The first includes a queen bed and sofa bed; each of the other three has a queen bed. The living-room couch provides another flexible place to rest.</div>
+        <div class="card"><strong>Porches, Backyard & Fire Pit</strong>Enjoy the covered front and back porches, a spacious private backyard, and evenings around the outdoor fire pit.</div>
+        <div class="card"><strong>Work & Laundry</strong>Wi-Fi, a dedicated workspace, and a stackable washer and dryer make longer stays and working trips more comfortable.</div>
+      </div>
+      <h3>House Rules</h3>
+      <ul>
+        <li>Please respect the home and surrounding property.</li>
+        <li>Keep noise at a considerate level, especially during quiet hours.</li>
+        <li>Use the fire pit responsibly and follow any posted safety guidance.</li>
+        <li>Report damage or maintenance issues as soon as possible.</li>
+      </ul>
+    </section>
+
+    <section id="area">
+      <h2>Explore the Area</h2>
+      <p class="intro">
+        Lawrenceburg sits in the heart of Kentucky bourbon and horse country, with
+        distilleries, wineries, Historic Main Street, and Bluegrass scenery close at hand.
+      </p>
+      <div class="grid">
+        <div class="card"><strong>Wild Turkey Distillery</strong><p>One of Lawrenceburg's signature bourbon stops is approximately 1.6 miles from the farmhouse. Reserve tours and tastings ahead of time.</p><a href="https://www.wildturkeybourbon.com/visit-us/" target="_blank" rel="noopener">Plan your visit</a></div>
+        <div class="card"><strong>Four Roses Distillery</strong><p>Tour the historic Spanish Mission-style distillery and learn how Four Roses creates its distinctive bourbon recipes.</p><a href="https://www.fourrosesbourbon.com/distillery" target="_blank" rel="noopener">View experiences</a></div>
+        <div class="card"><strong>Local Wineries</strong><p>Spend a relaxed afternoon at Rising Sons Home Farm Winery or Lovers Leap Vineyards &amp; Winery, both part of the area's craft beverage scene.</p><a href="https://visitlawrenceburgky.com/listings/drink/" target="_blank" rel="noopener">Explore local drinks</a></div>
+        <div class="card"><strong>Kentucky Horse Country</strong><p>Meet retired Thoroughbreds at Old Friends, visit the Kentucky Horse Park, or take a scenic drive through the rolling farms around Versailles.</p><a href="https://oldfriendsequine.org/visit/" target="_blank" rel="noopener">Visit Old Friends</a></div>
+        <div class="card"><strong>Historic Main Street</strong><p>Walk about five to six blocks to downtown Lawrenceburg for locally owned shops, restaurants, coffee, and community events.</p><a href="https://visitlawrenceburgky.com/" target="_blank" rel="noopener">Discover Lawrenceburg</a></div>
+        <div class="card"><strong>More Bourbon Day Trips</strong><p>Woodford Reserve, Castle &amp; Key, and Buffalo Trace make excellent additions to a Bluegrass-region itinerary. Book popular tours well in advance.</p><a href="https://www.kybourbontrail.com/" target="_blank" rel="noopener">Explore the Bourbon Trail</a></div>
+      </div>
+    </section>
+
+    <section id="food">
+      <h2>Eat & Drink</h2>
+      <p class="intro">A mix of locally recommended coffee, bakery treats, casual meals, and dinner stops in Lawrenceburg.</p>
+      <div class="grid">
+        <div class="card"><strong>Lineage Kitchen &amp; Bar</strong><p>A polished Main Street option for a relaxed dinner and drinks in downtown Lawrenceburg.</p><a href="https://visitlawrenceburgky.com/listings/eat/local-dining/" target="_blank" rel="noopener">Local dining details</a></div>
+        <div class="card"><strong>Heavens to Betsy! Bakery</strong><p>A downtown bakery at 116 South Main Street—an easy choice for pastries, sweets, or a quick morning stop.</p><a href="https://visitlawrenceburgky.com/listings/eat/local-dining/" target="_blank" rel="noopener">Local dining details</a></div>
+        <div class="card"><strong>The Burg Coffee House</strong><p>A locally owned coffee stop on West Broadway, convenient before a day of distillery tours or sightseeing.</p><a href="https://visitlawrenceburgky.com/listings/eat/local-dining/" target="_blank" rel="noopener">Local dining details</a></div>
+        <div class="card"><strong>Fairgrounds Drive-In</strong><p>A classic, casual Lawrenceburg drive-in on West Broadway for an easygoing meal.</p><a href="https://visitlawrenceburgky.com/listings/eat/local-dining/" target="_blank" rel="noopener">Local dining details</a></div>
+        <div class="card"><strong>Taylor Belle's &amp; Burgers</strong><p>A local burger stop on Glensboro Road when the group wants something casual and satisfying.</p><a href="https://visitlawrenceburgky.com/listings/eat/local-dining/" target="_blank" rel="noopener">Local dining details</a></div>
+        <div class="card"><strong>Bluegrass Sabor</strong><p>A Lawrenceburg dining option on Chico Drive that adds another convenient choice to your local itinerary.</p><a href="https://visitlawrenceburgky.com/listings/eat/local-dining/" target="_blank" rel="noopener">Local dining details</a></div>
+      </div>
+      <div class="callout"><strong>Local tip</strong><br>Restaurant hours can change, especially on Sundays and Mondays. Check current hours before heading out, and reserve dinner when your schedule includes a timed bourbon tour.</div>
+    </section>
+
+    <section id="events">
+      <h2>Upcoming Events</h2>
+      <p class="intro">
+        A few Lawrenceburg happenings this fall. Dates and details can change, so check the local calendar before heading out.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <strong>Uncorked and Glazed Over</strong>
+          <div class="event-date">September 24, 2026 • 6–8 PM</div>
+          <p>A creative evening at Rising Sons Home Farm Winery—a fitting addition to a Lawrenceburg wine-country stay.</p>
+          <a href="https://visitlawrenceburgky.com/events/" target="_blank" rel="noopener">Event details</a>
+        </div>
+        <div class="card">
+          <strong>Lawrenceburg Ghost Walk</strong>
+          <div class="event-date">September 26, 2026 • 8–10 PM</div>
+          <p>Explore downtown after dark on a seasonal ghost walk through Lawrenceburg's historic streets.</p>
+          <a href="https://visitlawrenceburgky.com/events/" target="_blank" rel="noopener">Event details</a>
+        </div>
+        <div class="card">
+          <strong>Wheels of Time Car Cruise-In</strong>
+          <div class="event-date">October 9, 2026 • 6–9 PM</div>
+          <p>A community car cruise-in and an easy evening activity during a fall stay in Lawrenceburg.</p>
+          <a href="https://visitlawrenceburgky.com/events/" target="_blank" rel="noopener">Event details</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="checkout">
+      <h2>Before You Go</h2>
+      <p class="intro">A simple checkout checklist helps us prepare the home for the next guest.</p>
+      <ul>
+        <li>Check that you have all personal belongings.</li>
+        <li>Dispose of food and trash according to the house instructions.</li>
+        <li>Turn off lights and appliances that don't need to remain on.</li>
+        <li>Lock doors and windows when leaving.</li>
+      </ul>
+      <div class="callout">
+        Thank you for choosing Bourbon Trail Farmhouse and 822 Main Property Management. We hope the farmhouse gave you a comfortable home base for your Lawrenceburg and Bluegrass adventures.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">822 Main Property Management</div>
+        <div>Bourbon Trail Farmhouse Guest Guide • Last updated: September 2026</div>
+      </div>
+      <a class="footer-link" href="https://822main.com">Visit 822main.com</a>
+    </div>
+  </footer>
+</body>
+</html>
